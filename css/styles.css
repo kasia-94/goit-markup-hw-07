@@ -491,17 +491,17 @@ label:hover > .modal-form-icon {
   margin-bottom: 0;
 }
 
-.features-li {
+.features-list__li {
   width: 270px;
 }
 
-.features-li:not(:last-child),
-.work-list-li:not(:last-child),
+.features-list__li:not(:last-child),
+.work-list__li:not(:last-child),
 .client-li:not(:last-child) {
   margin-right: 30px;
 }
 
-.features-list-icon {
+.features-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -510,11 +510,12 @@ label:hover > .modal-form-icon {
   margin-bottom: 30px;
   background-color: var(--main-buttom);
 }
-.features-list-icon svg {
+.features-icon__image {
   width: 70px;
   height: 70px;
 }
-.features-title {
+
+.features-list__title {
   margin-bottom: 10px;
 
   font-weight: 700;
@@ -522,7 +523,7 @@ label:hover > .modal-form-icon {
   text-transform: uppercase;
   font-size: 14px;
 }
-.features-description {
+.features-list__description {
   font-size: 14px;
   line-height: 1.71;
 
@@ -530,7 +531,7 @@ label:hover > .modal-form-icon {
 }
 
 /*Work*/
-.work-title,
+.work__title,
 .team-title,
 .client-title {
   margin-bottom: 50px;
@@ -545,11 +546,11 @@ label:hover > .modal-form-icon {
   margin-top: 0;
 }
 
-.work-list-li {
+.work-list__li {
   position: relative;
 }
 
-.work-list-description {
+.work-list__description {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -563,7 +564,7 @@ label:hover > .modal-form-icon {
   background: rgba(47, 48, 58, 0.8);
 }
 
-.work-list-description p {
+.work-list__description p {
   font-weight: 700;
   line-height: 1.14;
   text-align: center;
