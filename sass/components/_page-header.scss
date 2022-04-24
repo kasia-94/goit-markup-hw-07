@@ -1,0 +1,100 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    background-color: $white-color;
+  }
+
+  .site-nav {
+    display: flex;
+  
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+  .li {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  
+  .site-nav-li:not(:last-child) {
+    margin-right: 50px;
+  }
+  .site-nav .link-active {
+    position: relative;
+  
+    color: $accent-color;
+    text-decoration: none;
+  }
+  
+  .link-active::after {
+    content: '';
+  
+    position: absolute;
+    bottom: 0;
+  
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $accent-color;
+    border-radius: 2px;
+  }
+  
+  .site-nav .link {
+    color: $main-text-color;
+    transition: color 250ms $cubic-action;
+  }
+  
+  .site-nav .link:hover,
+  .site-nav .link:focus,
+  .site-nav .link:active,
+  .auth-nav .link:hover,
+  .auth-nav .link:focus,
+  .auth-nav .link:active {
+    color: $accent-color;
+  }
+
+  .auth-nav {
+    display: flex;
+    margin-left: auto;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+  .auth-nav-li {
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+  .auth-nav-li:not(:last-child) {
+    margin-right: 50px;
+  }
+  
+  .auth-nav .link {
+    display: flex;
+    align-items: center;
+    
+    color: $secondary-text-color;
+    font-style: normal;
+  
+    transition: color 250ms $cubic-action;
+  }
+  
+  .auth-nav-icon-mail,
+  .auth-nav-icon-phone {
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    fill: currentColor;
+  }
+  
+  .auth-nav-icon-mail:hover,
+  .auth-nav-icon-phone:hover,
+  .auth-nav-icon-mail:focus,
+  .auth-nav-icon-phone:focus {
+    color: $accent-color;
+    fill: $accent-color;
+  }
+  
