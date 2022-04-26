@@ -37,22 +37,22 @@
     background-color: $white-color;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-  }
   
-  .modal-box {
-    padding: 32px 32px 32px 32px;
-  }
-  
-  .modal-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
-    text-transform: none;
+    &-box {
+      padding: 32px 32px 32px 32px;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.17;
+      letter-spacing: 0.01em;
+      text-transform: none;
+    }
   }
   
   .title-style {
@@ -70,8 +70,8 @@
     width: 100%;
     padding: 14px 14px 14px 42px;
     margin-top: 4px;
+    @include border(rgba(33, 33, 33, 0.2));
   
-    border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
     border-radius: 4px;
   
@@ -95,13 +95,13 @@
     width: 18px;
     height: 18px;
     transition: border 250ms $cubic-action;
-  }
   
-  .label:focus-within > .modal-form-icon,
-  label:hover > .modal-form-icon {
-    fill: $accent-color;
+    .label:focus-within > &,
+    label:hover > & {
+      fill: $accent-color;
+    }
   }
-  
+
   .textarea {
     display: inline-block;
     width: 100%;
@@ -112,18 +112,18 @@
   }
   
   .border-form {
-    border: 1px solid rgba(33, 33, 33, 0.2);
+    @include border(rgba(33, 33, 33, 0.2));
     box-sizing: border-box;
     border-radius: 4px;
     cursor: pointer;
     transition: border 250ms $cubic-action;
-  }
   
-  .border-form:focus,
-  .border-form:hover {
-    outline: none;
-    border: 1px solid $accent-color;
-    background-origin: border-box;
+    &:focus,
+    &:hover {
+      outline: none;
+      @include border($accent-color);
+      background-origin: border-box;
+  }
   }
   
   .checkbox {
@@ -159,10 +159,10 @@
     height: 15px;
     background-image: url(../images/Vector.svg);
     transition: background-color 250ms $cubic-action;
-  }
   
-  .checkbox-input:checked ~ .checkbox-icon {
-    background-image: url(../images/icon-check.svg);
+    .checkbox-input:checked ~ & {
+      background-image: url(../images/icon-check.svg);
+    }
   }
   
   .link-form {
@@ -170,10 +170,7 @@
   }
   
   .modal-form-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
+    @extend %flex-centered;
     width: 200px;
     height: 50px;
     
@@ -190,25 +187,23 @@
     cursor: pointer;
   
     transition: background-color 250ms $cubic-action;
-  }
   
-  .modal-form-button:hover,
-  .modal-form-button:focus {
-    background-color: $bottom-index-active;
+    &:hover,
+    &:focus {
+      background-color: $bottom-index-active;
+    }
   }
   
   .button-modal {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
+    @extend %flex-centered;
     width: 30px;
     height: 30px;
   
     cursor: pointer;
     background: $white-color;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    
+    @include border(rgba(0, 0, 0, 0.1));
     border-radius: 50%;
   }
   
@@ -217,12 +212,10 @@
     height: 18px;
   
     fill: $logo-color-second;
-  
     transition: fill 250ms $cubic-action;
+      
+    .button-modal:focus &,
+    .button-modal:hover & {
+      fill: $accent-color;
   }
-  
-  .button-modal:focus .button-modal-icon,
-  .button-modal:hover .button-modal-icon {
-    fill: $accent-color;
   }
-  

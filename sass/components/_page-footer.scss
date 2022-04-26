@@ -12,31 +12,32 @@
     align-items: baseline;
   }
   
-  address {
+  .address {
     margin-top: 20px;
     margin-bottom: 0;
     margin-right: 70px;
-  }
-  
-  .address-link {
-    margin-bottom: 0;
-    font-style: normal;
-    line-height: 1.71;
-  
-    color: $white-color;
+   
+    &-link {
+      margin-bottom: 0;
+      font-style: normal;
+      line-height: 1.71;
+    
+      color: $white-color;
+    }
   }
   
   .footer-nav {
     margin-top: 9px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+
+    & .link {
+      color: $footer-color;
+      font-style: normal;
+      text-decoration: none;
+    }
   }
-  .footer-nav .link {
-    color: $footer-color;
-    font-style: normal;
-    text-decoration: none;
-  }
-  
+
   .footer-social-main {
     display: flex;
     margin: 0 32px 30px 32px;
@@ -64,29 +65,28 @@
   
     transition: background-color 250ms $cubic-action,
     color 250ms $cubic-action;
-  }
   
-  .footer-social-li:not(:last-child) {
-    margin-right: 10px;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    
+    &:hover,
+    &:focus {
+      @extend .footer-social-li;
+      background-color: $accent-color;
+    }
   }
-  
+
   .footer-list-icon {
     width: 20px;
     height: 20px;
     margin: 12px;
-    fill: $client-color;
-  }
-  
-  .footer-list-icon,
-  .footer-list-icon:hover,
-  .footer-list-icon:focus {
     fill: $white-color;
-  }
-  
-  .footer-social-li:hover,
-  .footer-social-li:focus {
-    background-color: $accent-color;
-    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+     @extend .footer-list-icon;
+    }
   }
   
   .footer-email {
@@ -105,16 +105,14 @@
   
     background-color: transparent;
     color: $white-color;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    @include border(rgba(255, 255, 255, 0.3));
     box-sizing: border-box;
     filter: drop-shadow (0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
   }
   
   .button-submit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-centered;
     width: 200px;
     height: 50px;
     font-weight: 700;

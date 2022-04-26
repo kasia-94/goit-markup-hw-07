@@ -1,19 +1,12 @@
 .section-work {
     padding-top: 0;
     padding-bottom: 94px;
-  }
-  
-  .work {
-    background-color: $white-color;
-  }
 
-  .work-list__li:not(:last-child) {
-    margin-right: 30px;
+    background-color: $white-color;
   }
 
   .work__title {
     margin-bottom: 50px;
-  
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -27,7 +20,10 @@
   
   .work-list__li {
     position: relative;
-  }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }}
   
   .work-list__description {
     position: absolute;
@@ -41,12 +37,10 @@
   
     color: $white-color;
     background: rgba(47, 48, 58, 0.8);
-  }
   
-  .work-list__description p {
+  & p {
     font-weight: 700;
     line-height: 1.14;
     text-align: center;
     text-transform: uppercase;
-  }
-  
+  }}

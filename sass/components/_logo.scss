@@ -11,8 +11,10 @@
   }
   .studio {
     color: $logo-color-second;
+
+    &-footer {
+      color: $white-color;
+    }
   }
-  .studio-footer {
-    color: $white-color;
-  }
+
   

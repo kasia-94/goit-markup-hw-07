@@ -24,6 +24,7 @@
     background-size: cover;
     background-position: center;
   }
+
   .main-index-title {
     font-weight: 900;
     font-size: 44px;
@@ -54,11 +55,13 @@
     border: transparent;
   
     transition: background-color 250ms $cubic-action;
-  }
-  .button-index:hover,
-  .button-index:focus {
+
+    &:hover,
+    &:focus {
     cursor: pointer;
     color: $white-color;
     background-color: $bottom-index-active;
   }
+  }
+  
   

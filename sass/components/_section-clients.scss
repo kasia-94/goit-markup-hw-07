@@ -1,7 +1,3 @@
-.client-li:not(:last-child) {
-    margin-right: 30px;
-  }
-
   .client-title {
     margin-bottom: 50px;
   
@@ -11,7 +7,7 @@
     text-align: center;
   }
 
-  .clients {
+  .client-list {
     display: flex;
     margin-top: 0;
     margin-bottom: 0;
@@ -21,22 +17,29 @@
   .client-li {
     padding: auto;
     vertical-align: middle;
+
+   &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
   
-  .clients-li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  .client-link {
+    @extend %flex-centered;
     width: 170px;
     height: 92px;
   
     color: $client-color;
-    border: 1px solid $client-color;
+    @include border($client-color);
     border-radius: 4px;
-  
     transition: background-color 250ms $cubic-action,
     color 250ms $cubic-action;
+
+      &:hover,
+      &:focus {
+      color: $accent-color;
+      fill: $accent-color;
+      @include border($accent-color);
+    }
   }
   
   .icon-li {
@@ -44,11 +47,3 @@
     height: 60px;
     fill: currentColor;
   }
-  
-  .clients-li:hover,
-  .clients-li:focus {
-    color: $accent-color;
-    fill: $accent-color;
-    border: 1px solid $accent-color;
-  }
-  
